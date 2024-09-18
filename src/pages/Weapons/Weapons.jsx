@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function Weapons() {
   const [weapons, setWeapons] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchWeaponsData() {
@@ -12,18 +13,24 @@ export default function Weapons() {
         console.log({ weapons });
       } catch (error) {
         console.error("error:", error);
+      } finally {
+        setIsLoading(false);
       }
     }
     fetchWeaponsData();
   }, []);
 
   return (
-    <div>
-      <ul>
-        {weapons.map((weapon) => (
-          <li key={weapon.id}>{weapon.name}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      {isLoading ? (<p>Loading...</p>) : (
+        <div>
+          <ul>
+            {weapons.map((weapon) => (
+              <li key={weapon.id}>{weapon.name}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 }

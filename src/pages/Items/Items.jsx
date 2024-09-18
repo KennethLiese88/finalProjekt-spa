@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default function Items() {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchItemsData() {
@@ -12,18 +13,24 @@ export default function Items() {
         console.log({ items });
       } catch (error) {
         console.error("error:", error);
+      } finally {
+        setIsLoading(false);
       }
     }
     fetchItemsData();
   }, []);
 
   return (
-    <div>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
-    </div>
+    <>
+      {isLoading ? (<p>Loading...</p>) : (
+        <div>
+          <ul>
+            {items.map((item) => (
+              <li key={item.id}>{item.name}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 }

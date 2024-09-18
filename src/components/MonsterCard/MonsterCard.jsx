@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from "./MonsterCard.module.css"
+import { FavContext } from '../../context/FavContext';
+import { imageData } from '../../assets/data/imageData';
 
 export default function MonsterCard({monster}) {
-    const [ favMonster, setFavMonster] = useState([]);
     const [ favToggle, setFavToggle] = useState(false);
+    const { favMonster, setFavMonster } = useContext(FavContext);
 
     function isFav() {
         return favMonster.some(mon => mon.id === monster.id);
@@ -23,6 +25,11 @@ export default function MonsterCard({monster}) {
         }
         console.log(favMonster);
       }
+
+    function checkMonster(name) {
+        const found = imageData.find(data => data.name === name);
+        return found ? found.url : "#";
+    }
     
 
   return (
@@ -32,7 +39,7 @@ export default function MonsterCard({monster}) {
         ? <i onClick={toggleFavorite} className="fa-solid fa-star" style={{color:"yellow"}}></i>
         : <i onClick={toggleFavorite} className="fa-regular fa-star"></i>}
         <div className={styles.monster_img}>
-            <img src="https://www.monsterhunter.com/world/sp/images/top/img_overview_01.jpg" alt="monster image" />
+            <img src={checkMonster(monster.name)} alt="monster image" />
         </div>
         <div  className={styles.monster_stats}>
 
