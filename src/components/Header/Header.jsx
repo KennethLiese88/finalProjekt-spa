@@ -6,13 +6,15 @@ export default function Header() {
   return (
     <>
       <header>
-        <h1>Header</h1>
+        <h1>Monster Hunter World</h1>
         <nav>
           <ul>
-            <NavLink to="/" >Home</NavLink>
-            <NavLink to="/main" >Main</NavLink>
-            <NavLink to="/contact" >Contact</NavLink>
-            <NavLink to="/about" >About</NavLink>
+            <li><NavLink to="/">Home</NavLink></li>
+            <li><NavLink to="/monster">Monster</NavLink></li>
+            <li><NavLink to="/weapons">Weapons</NavLink></li>
+            <li><NavLink to="/items">Items</NavLink></li>
+            <li><NavLink to="/hunts"><i className="fa-regular fa-star"></i>Hunts</NavLink></li> 
+            <li><NavLink to="/comments">Comments</NavLink></li>
           </ul>
         </nav>
       </header>
