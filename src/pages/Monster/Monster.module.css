@@ -1,0 +1,17 @@
+main {
+    display: flex;
+    height: 80vh;
+}
+
+.sidebar_list {
+    width: 30%;
+    background-color: #0de596;
+    overflow-y: scroll;
+    li {
+        padding: 10px;
+        
+        &:hover {
+            background-color: #009B77;
+        }
+    }
+}

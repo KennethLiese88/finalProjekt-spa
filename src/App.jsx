@@ -1,13 +1,13 @@
 import './App.css';
 import { Routes, Route} from "react-router-dom";
 import Header from './components/Header/Header';
-import Home from './components/pages/Home/Home';
-import Monster from './components/pages/Monster/Monster';
-import Weapons from './components/pages/Weapons/Weapons';
-import Items from './components/pages/Items/Items';
-import Hunts from './components/pages/Hunts/Hunts';
-import Comments from './components/pages/Comments/Comments';
-import NotFound from './components/pages/NotFound/NotFound';
+import Home from './pages/Home/Home';
+import Monster from './pages/Monster/Monster';
+import Weapons from './pages/Weapons/Weapons';
+import Items from './pages/Items/Items';
+import Hunts from './pages/Hunts/Hunts';
+import Comments from './pages/Comments/Comments';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
 

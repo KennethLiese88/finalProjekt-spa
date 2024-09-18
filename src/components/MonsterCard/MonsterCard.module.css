@@ -1,0 +1,15 @@
+.card_wrapper {
+    width: 100%;
+    background-color: lightgreen;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.monster_img {
+    background-color: white;
+    width: fit-content;
+    img {
+    max-width: 300px;
+
+    }
+}
