@@ -1,0 +1,64 @@
+article {
+    display: flex;
+    flex-direction: column;
+    background-color: seagreen;
+    margin: 2rem;
+    padding: 1rem;
+    .article_content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.user_area {
+    width: 30%;
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    img {
+        width: 80%;
+        max-width: 300px;       
+        min-width: 150px;      
+        height: auto;
+    }
+}
+
+.comment_area {
+    width: 60%;
+    flex: 2 1 300px;
+    position: relative;
+    padding: 1rem;
+    h4, span, p {
+        word-break: break-word;
+        padding: 0.5rem;
+    }
+    button {
+        font-size: 2rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: seagreen;
+        opacity: 0.5;
+        border: none;
+    }
+}
+
+.icon_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    div {
+        width: 100px;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+        padding: 0.5rem;
+        i {
+            margin-right: 1rem;
+        }
+    }
+}

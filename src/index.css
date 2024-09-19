@@ -15,3 +15,9 @@ ul {
 a {
     text-decoration: none;
 }
+
+/* ToDo: normalize button */
+
+button {
+    cursor: pointer; 
+}

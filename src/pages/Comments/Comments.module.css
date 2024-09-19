@@ -1,0 +1,31 @@
+.comment_section {
+    height: 100%;
+    background-color: lightgreen;
+    padding: 2rem;
+    h2 {
+        text-align: center;
+    }
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        margin: 0.5rem;
+        padding: 0.5rem;
+        label {
+            margin: 0.5rem 0 0.3rem 0;
+        }
+        textarea {
+            height: 100%;
+        }
+        button {
+            margin-top: 1rem;
+            background-color: lightgreen;
+        }
+    }
+}
