@@ -64,9 +64,9 @@ export default function Items() {
             </div>
           ))}
           <div className={styles.backTop}>
-            <i class="fa-solid fa-stop"></i>
+            <i className="fa-solid fa-stop"></i>
             <a href="#top"><i className="fa-solid fa-angles-up"></i></a>
-            <i class="fa-solid fa-stop"></i>
+            <i className="fa-solid fa-stop"></i>
           </div>
         </div>
       )}

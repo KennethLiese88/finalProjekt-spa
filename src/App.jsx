@@ -9,22 +9,25 @@ import Hunts from "./pages/Hunts/Hunts";
 import Comments from "./pages/Comments/Comments";
 import NotFound from "./pages/NotFound/NotFound";
 import FavContextProvider from "./context/FavContext";
+import CommentProvider from "./context/CommentContext";
 
 function App() {
   return (
     <>
       <FavContextProvider>
-        <Routes>
-          <Route path="/" element={<Header />}>
-            <Route index element={<Home />} />
-            <Route path="/monster" element={<Monster />} />
-            <Route path="/weapons" element={<Weapons />} />
-            <Route path="/items" element={<Items />} />
-            <Route path="/hunts" element={<Hunts />} />
-            <Route path="/comments" element={<Comments />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <CommentProvider>
+          <Routes>
+            <Route path="/" element={<Header />}>
+              <Route index element={<Home />} />
+              <Route path="/monster" element={<Monster />} />
+              <Route path="/weapons" element={<Weapons />} />
+              <Route path="/items" element={<Items />} />
+              <Route path="/hunts" element={<Hunts />} />
+              <Route path="/comments" element={<Comments />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </CommentProvider>
       </FavContextProvider>
     </>
   );

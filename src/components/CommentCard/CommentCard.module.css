@@ -1,64 +1,116 @@
 article {
+  width: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://img.freepik.com/free-vector/green-gradient-background-design-abstract-modern_343694-2849.jpg?t=st=1727025772~exp=1727029372~hmac=54304e74476f3bab6962b68a69d21639d94ee47ee2761b7fba50f30593e4b39d&w=1380");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 3px 3px 10px black inset, -3px -3px 10px black inset,
+    6px 6px 10px black, -6px -6px 10px black;
+  border: 3px solid rgb(10, 28, 12);
+  outline: 3px solid white;
+  margin: 2rem auto;
+  padding: 1rem;
+  .article_content {
     display: flex;
-    flex-direction: column;
-    background-color: seagreen;
-    margin: 2rem;
-    padding: 1rem;
-    .article_content {
-        display: flex;
-        flex-wrap: wrap;
-    }
+    flex-wrap: wrap;
+  }
 }
 
 .user_area {
-    width: 30%;
-    flex: 1 1 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    img {
-        width: 80%;
-        max-width: 300px;       
-        min-width: 150px;      
-        height: auto;
-    }
+  width: 20%;
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  img {
+    width: 80%;
+    max-width: 300px;
+    min-width: 150px;
+    height: auto;
+    box-shadow: 3px 3px 10px black, -3px -3px 10px black;
+    border: 3px solid white;
+    outline: 3px solid rgb(10, 28, 12);
+  }
+  p {
+    margin: 0;
+    color: lightgray;
+  }
 }
 
 .comment_area {
-    width: 60%;
-    flex: 2 1 300px;
-    position: relative;
-    padding: 1rem;
-    h4, span, p {
-        word-break: break-word;
-        padding: 0.5rem;
-    }
-    button {
-        font-size: 2rem;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: seagreen;
-        opacity: 0.5;
-        border: none;
-    }
+  width: 60%;
+  flex: 2 1 300px;
+  position: relative;
+  padding: 1rem;
+  h4 {
+    font-size: clamp(14px, 5vw, 24px);
+    text-shadow: 3px 3px 3px black;
+    color: silver;
+    padding: 0.5rem;
+  }
+  span {
+    padding: 0.5rem;
+    float: inline-end;
+  }
+  p {
+    float: left;
+    text-align: start;
+    font-size: clamp(14px, 5vw, 24px);
+    word-break: break-word;
+    background-color: rgba(0, 0, 0, 0.63);
+    color: rgb(206, 218, 200);
+    margin: 0;
+    padding: 1.5rem;
+  }
+  .removeIcon {
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: aquamarine;
+    opacity: 0.5;
+    border: none;
+    &:hover {
+        color: #ffffff;
+        transform: translateY(-2px);
+        opacity: 0.8;
+      }
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+  }
 }
 
 .icon_area {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    div {
-        width: 100px;
-        text-align: center;
-        border: 1px solid black;
-        cursor: pointer;
-        padding: 0.5rem;
-        i {
-            margin-right: 1rem;
-        }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  div {
+    width: 100px;
+    color: lightgreen;
+    text-align: center;
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.566);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    padding: 0.5rem;
+    &:hover {
+      background-color: #105433;
+      transform: translateY(-2px);
     }
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    i {
+      margin-right: 1rem;
+    }
+  }
 }

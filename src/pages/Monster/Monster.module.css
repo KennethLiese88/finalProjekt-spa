@@ -12,7 +12,7 @@ main {
     overflow-y: auto;
     li {
         font-size: 1.5rem;
-        background-color: #388E3C;
+        background-image: url("https://img.freepik.com/free-vector/emerald-background-design_23-2150320585.jpg?t=st=1727012754~exp=1727016354~hmac=f4097b05d106e807a04f132fe0d1c396e46d2556d17048c94f5c31c5c59ddc2e&w=1380");
         color: white;
         border-radius: 5px;
         margin-bottom: 10px;

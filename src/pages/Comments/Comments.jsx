@@ -1,66 +1,15 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useContext } from "react";
 import styles from "./Comments.module.css";
 import CommentCard from "../../components/CommentCard/CommentCard";
-import { avatarData } from "../../assets/data/avatarData";
+import { CommentContext} from "../../context/CommentContext";
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "username":
-      return { ...state, username: action.payload };
-    case "email":
-      return { ...state, email: action.payload };
-    case "topic":
-      return { ...state, topic: action.payload };
-    case "comment":
-      return { ...state, comment: action.payload };
-    case "setComments":
-      return { ...state, comments: action.payload };
-    case "addComment":
-      const newComment = {
-        avatar: avatarData[Math.floor(Math.random() * avatarData.length)],
-        username: state.username,
-        email: state.email,
-        topic: state.topic,
-        comment: state.comment,
-        dateTimePosted: new Date(),
-      };
-      const updatedComments = [newComment, ...state.comments];
-      localStorage.setItem("comments", JSON.stringify(updatedComments));
-
-      return {
-        ...state,
-        comments: updatedComments,
-        username: "",
-        email: "",
-        topic: "",
-        comment: "",
-      };
-    default:
-      return state;
-  }
-}
-
-const initialState = {
-  username: "",
-  email: "",
-  topic: "",
-  comment: "",
-  comments: [],
-};
 
 export default function Comments() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const { state, dispatch } = useContext(CommentContext);
 
-  useEffect(() => {
-    const storedComments = localStorage.getItem("comments");
-    if (storedComments) {
-      const commentsWithDateObjects = JSON.parse(storedComments).map(comment => ({
-        ...comment,
-        dateTimePosted: new Date(comment.dateTimePosted) // Konvertiere zurück in ein Date-Objekt
-      }));
-      dispatch({ type: "setComments", payload: commentsWithDateObjects });
-    }
-  }, []);
+  function handleRemoveComment(index) {
+    dispatch({ type: "removeComment", payload: index });
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -117,7 +66,7 @@ export default function Comments() {
         </fieldset>
       </form>
       {state.comments.map((comment, index) => (
-        <CommentCard key={index} comment={comment} />
+        <CommentCard key={index} comment={comment} removeComment={() => handleRemoveComment(index)}/>
       ))}
     </section>
   );
