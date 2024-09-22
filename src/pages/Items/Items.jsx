@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import ItemCard from "../../components/ItemCard/ItemCard";
+import styles from "./Items.module.css";
 
 export default function Items() {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchItem, setSearchItem] = useState("");
+  const itemRefs = useRef([]);
 
   useEffect(() => {
     async function fetchItemsData() {
@@ -10,7 +14,6 @@ export default function Items() {
         const response = await fetch("https://mhw-db.com/items");
         const data = await response.json();
         setItems(data);
-        console.log({ items });
       } catch (error) {
         console.error("error:", error);
       } finally {
@@ -20,15 +23,51 @@ export default function Items() {
     fetchItemsData();
   }, []);
 
+  function handleSearch() {
+    const index = items.findIndex(
+      (item) => item.name.toLowerCase() === searchItem.toLowerCase()
+    );
+    if (itemRefs.current[index]) {
+      itemRefs.current[index].scrollIntoView({ behavior: "smooth" });
+      itemRefs.current[index].focus();
+    }
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      handleSearch();
+    }
+  }
+
   return (
     <>
-      {isLoading ? (<p>Loading...</p>) : (
-        <div>
-          <ul>
-            {items.map((item) => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul>
+      <div className={styles.searchbar}>
+        <input
+          type="text"
+          value={searchItem}
+          onChange={(e) => setSearchItem(e.target.value)}
+          onKeyDown={handleKeyPress}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className={styles.itemsContainer}>
+          {items.map((item, index) => (
+            <div
+              key={item.id}
+              tabIndex={0}
+              ref={(div) => (itemRefs.current[index] = div)}
+            >
+              <ItemCard item={item} />
+            </div>
+          ))}
+          <div className={styles.backTop}>
+            <i class="fa-solid fa-stop"></i>
+            <a href="#top"><i className="fa-solid fa-angles-up"></i></a>
+            <i class="fa-solid fa-stop"></i>
+          </div>
         </div>
       )}
     </>

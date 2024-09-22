@@ -1,0 +1,43 @@
+.card {
+    position: relative;
+  background-image: url("https://img.freepik.com/free-vector/watercolor-emerald-background_23-2150270303.jpg?t=st=1727000485~exp=1727004085~hmac=5502e33a6efa0c7bff5fbab4409e4ac6ae9fb266d2f810002629fc3bc5f46f90&w=1380");
+  background-position: bottom;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.457);
+  margin: 10px;
+  padding: 15px;
+  padding-bottom: 20px;
+  width: 250px;
+  height: 300px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+  image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  h3 {
+    height: 50px;
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #a9d1a6;
+  }
+  p {
+    height: 150px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.203);
+    color: #ade3cf;
+    overflow: auto;
+    padding: 10px;
+  }
+  span {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+  }
+}

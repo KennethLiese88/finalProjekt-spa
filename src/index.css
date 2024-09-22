@@ -16,8 +16,12 @@ a {
     text-decoration: none;
 }
 
-/* ToDo: normalize button */
+button, input {
+    all: unset;
+    background-color: white;
+    border: 1px solid lightgray;
+}
 
 button {
-    cursor: pointer; 
+    cursor: pointer;
 }

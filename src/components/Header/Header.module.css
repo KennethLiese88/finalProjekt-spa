@@ -1,15 +1,15 @@
 header {
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
   background-color: #e6f4e6;
-
   h1 {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 2.5rem;
+    margin: 2rem;
+    font-size: 3rem;
   }
 
   nav {
@@ -22,11 +22,11 @@ header {
       flex-wrap: wrap;
       width: 80%;
       a {
-        color: #333;
+        color: #6c6b6b;
+        font-size: 1.5rem;
         font-weight: bold;
-        margin: 10px;
         &:hover {
-          color: #555;
+          color: #333;
         }
       }
     }
