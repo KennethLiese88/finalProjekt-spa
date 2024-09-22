@@ -1,34 +1,33 @@
 .homeContainer {
-    height: 100vh;
-    background-image: url("https://i.redd.it/7b6c4zorbs7z.png");
-    background-size: cover;
+  height: 100vh;
+  background-image: url("https://i.redd.it/7b6c4zorbs7z.png");
+  background-size: cover;
 }
 
 @media (max-width: 800px) {
-    .homeContainer {
-      background-image: url("https://gameranx.com/wp-content/uploads/2017/11/Monster-Hunter-World-1080P-Wallpaper.jpg");
-      background-position: center;
-    }
+  .homeContainer {
+    background-image: url("https://gameranx.com/wp-content/uploads/2017/11/Monster-Hunter-World-1080P-Wallpaper.jpg");
+    background-position: center;
   }
-  
-  @media (max-width: 500px) {
-    .homeContainer {
-      background-image: url("https://i.pinimg.com/originals/23/47/37/234737d00cd6354aa9eac7deb52d6795.jpg");
-      background-position: center;
-    }
+}
+
+@media (max-width: 500px) {
+  .homeContainer {
+    background-image: url("https://i.pinimg.com/originals/23/47/37/234737d00cd6354aa9eac7deb52d6795.jpg");
+    background-position: center;
   }
+}
 
 .footer {
-    
-    background-color: #388E3C;
-    text-align: center;
+  background-color: #388e3c;
+  text-align: center;
 }
 
 .footerText {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    font-size: 1rem;
-    color: #FFFFFF;
-    margin: 0 auto;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0 auto;
 }
