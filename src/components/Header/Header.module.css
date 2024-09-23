@@ -8,8 +8,16 @@ header {
   background-color: #e6f4e6;
   h1 {
     text-align: center;
+    text-shadow: 3px 3px 1px rgb(78, 181, 106);
     margin: 2rem;
     font-size: 3rem;
+    
+    @media (max-width: 700px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
   }
 
   nav {
@@ -18,15 +26,23 @@ header {
     justify-content: center;
     ul {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       flex-wrap: wrap;
       width: 80%;
       a {
         color: #6c6b6b;
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Standardgröße */
         font-weight: bold;
+        margin: 0 1rem;
         &:hover {
           color: #333;
+        }
+
+        @media (max-width: 700px) {
+          font-size: 1.25rem; /* Kleinere Bildschirme */
+        }
+        @media (max-width: 480px) {
+          font-size: 1rem; /* Sehr kleine Bildschirme */
         }
       }
     }

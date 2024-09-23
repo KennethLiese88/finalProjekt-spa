@@ -14,6 +14,7 @@ export default function Items() {
         const response = await fetch("https://mhw-db.com/items");
         const data = await response.json();
         setItems(data);
+        console.log({data});
       } catch (error) {
         console.error("error:", error);
       } finally {
@@ -51,7 +52,7 @@ export default function Items() {
         <button onClick={handleSearch}>Search</button>
       </div>
       {isLoading ? (
-        <p>Loading...</p>
+        <p className={styles.isLoading}><i className="fa-solid fa-gear fa-spin"></i> Loading...</p>
       ) : (
         <div className={styles.itemsContainer}>
           {items.map((item, index) => (
@@ -73,3 +74,5 @@ export default function Items() {
     </>
   );
 }
+
+// items brauchen noch jeweils ihre icons

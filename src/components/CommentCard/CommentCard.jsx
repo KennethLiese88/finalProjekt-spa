@@ -14,7 +14,7 @@ export default function CommentCard({comment, removeComment}) {
             </div>
             <div className={styles.comment_area}>
                 <h4>{comment.topic}</h4>
-                <i className={`fa-solid fa-circle-xmark ${styles.removeIcon}`}  onClick={removeComment}></i>
+                <i className={`fa-solid fa-circle-xmark ${styles.removeIcon}`} onClick={() => removeComment(comment.id)}></i>
                 <span><i>{comment.dateTimePosted.toLocaleTimeString()}</i></span>
                 <span><i>{comment.dateTimePosted.toLocaleDateString()}</i></span>
                 <p>{comment.comment}</p>

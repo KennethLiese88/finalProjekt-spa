@@ -10,3 +10,5 @@ export default function Home() {
         </div>
   )
 }
+
+// dropdown menü für den header wenn bildschirm zu klein wird

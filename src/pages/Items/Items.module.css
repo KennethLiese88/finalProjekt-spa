@@ -25,12 +25,17 @@
     }
 }
 
+.isLoading {
+    text-align: center;
+    margin: 3rem;
+}
+
 .itemsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     scroll-behavior: smooth;
-    background-image: url("https://img.freepik.com/free-vector/realistic-geometric-shapes-background-concept_23-2148413640.jpg?t=st=1727001565~exp=1727005165~hmac=faeb39e2e9750950160bd696517247d909ea66690671a8ac54fc4ebb342cb765&w=1380");
+    background-image: url("../../assets/images/bg-black-hex.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

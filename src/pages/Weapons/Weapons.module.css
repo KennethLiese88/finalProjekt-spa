@@ -1,0 +1,77 @@
+.container {
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("../../assets/images/bg-sea-green.jpg");
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+}
+
+.isLoading {
+  text-align: center;
+  margin: 3rem;
+}
+
+.weaponType {
+  flex: 1 1 100%;
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(33, 105, 99);
+    text-shadow: 3px 3px 3px rgb(30, 144, 152);
+    border-bottom: 2px solid rgb(37, 118, 111);
+    margin: 1rem;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    li {
+      width: 300px;
+      background-image: linear-gradient(to right, #b3adc1, #e9e4f0);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: translateY(-10px);
+      }
+      p {
+        text-align: center;
+        padding: 10px 15px;
+        font-size: 1rem;
+        color: #333;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.weaponHeader {
+  background-image: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  font-size: 1.2rem;
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+}
+
+.weaponImageContainer {
+  text-align: center;
+  background-image: linear-gradient(to right, #a6bdbe, #ffffff);
+  padding: 15px;
+  border-top: 1px solid #eee;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

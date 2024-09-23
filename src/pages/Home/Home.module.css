@@ -1,19 +1,19 @@
 .homeContainer {
   height: 100vh;
-  background-image: url("https://i.redd.it/7b6c4zorbs7z.png");
+  background-image: url("../../assets/images/mhw-home-wallpaper.png");
   background-size: cover;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
   .homeContainer {
-    background-image: url("https://gameranx.com/wp-content/uploads/2017/11/Monster-Hunter-World-1080P-Wallpaper.jpg");
+    background-image: url("../../assets/images/mhw-home-2.jpg");
     background-position: center;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
   .homeContainer {
-    background-image: url("https://i.pinimg.com/originals/23/47/37/234737d00cd6354aa9eac7deb52d6795.jpg");
+    background-image: url("../../assets/images/mhw-home-3.jpg");
     background-position: center;
   }
 }

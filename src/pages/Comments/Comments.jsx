@@ -7,8 +7,8 @@ import { CommentContext} from "../../context/CommentContext";
 export default function Comments() {
   const { state, dispatch } = useContext(CommentContext);
 
-  function handleRemoveComment(index) {
-    dispatch({ type: "removeComment", payload: index });
+  function handleRemoveComment(commentId) {
+    dispatch({ type: "removeComment", payload: commentId });
   }
 
   function handleSubmit(e) {
@@ -29,6 +29,7 @@ export default function Comments() {
             onChange={(e) =>
               dispatch({ type: "topic", payload: e.target.value })
             }
+            placeholder="What's your topic?"
             required
           />
           <label htmlFor="comment">Comment</label>
@@ -38,6 +39,7 @@ export default function Comments() {
             onChange={(e) =>
               dispatch({ type: "comment", payload: e.target.value })
             }
+            placeholder="Write a comment.."
             maxLength={500}
             required
           ></textarea>
@@ -51,6 +53,7 @@ export default function Comments() {
             onChange={(e) =>
               dispatch({ type: "username", payload: e.target.value })
             }
+            placeholder="What's your name?"
             required
           />
           <label htmlFor="email">Email*</label>
@@ -61,12 +64,13 @@ export default function Comments() {
             onChange={(e) =>
               dispatch({ type: "email", payload: e.target.value })
             }
+            placeholder="Not required"
           />
           <button>Comment</button>
         </fieldset>
       </form>
       {state.comments.map((comment, index) => (
-        <CommentCard key={index} comment={comment} removeComment={() => handleRemoveComment(index)}/>
+        <CommentCard key={index} comment={comment} removeComment={() => handleRemoveComment(comment.id)}/>
       ))}
     </section>
   );
