@@ -10,7 +10,7 @@ export default function Header() {
     <>
       <header>
         <h1>Monster Hunter World</h1>
-        <nav>
+        <nav className={styles.navbar}>
           <ul>
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/monster">Monster</NavLink></li>
