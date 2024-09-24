@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import MonsterCard from "../../components/MonsterCard/MonsterCard";
 import styles from "./Monster.module.css";
-import { FavContext } from "../../context/FavContext"; 
+import { FavContext } from "../../context/FavContext";
 
 export default function Monster() {
   const [monsterData, setMonsterData] = useState([]);
@@ -15,7 +15,7 @@ export default function Monster() {
         const response = await fetch("https://mhw-db.com/monsters");
         const data = await response.json();
         setMonsterData(data);
-        console.log({data});
+        console.log({ data });
       } catch (error) {
         console.error("error:", error);
       } finally {
@@ -28,7 +28,9 @@ export default function Monster() {
   return (
     <>
       {isLoading ? (
-        <p className={styles.isLoading}><i className="fa-solid fa-gear fa-spin"></i> Loading...</p>
+        <p className={styles.isLoading}>
+          <i className="fa-solid fa-gear fa-spin"></i> Loading...
+        </p>
       ) : (
         <main>
           <section className={styles.sidebar_list}>
@@ -49,8 +51,13 @@ export default function Monster() {
                         // e.stopPropagation();
                         toggleFavorite(mon);
                       }}
-                      className={isFav ? "fa-solid fa-star" : "fa-regular fa-star"}
-                      style={{ color: isFav ? "yellow" : "inherit", marginLeft: '10px' }}
+                      className={
+                        isFav ? "fa-solid fa-star" : "fa-regular fa-star"
+                      }
+                      style={{
+                        color: isFav ? "yellow" : "inherit",
+                        marginLeft: "10px",
+                      }}
                     ></i>
                   </li>
                 );

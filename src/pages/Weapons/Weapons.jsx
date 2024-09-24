@@ -28,7 +28,7 @@ export default function Weapons() {
         const response = await fetch("https://mhw-db.com/weapons");
         const data = await response.json();
         setWeapons(data);
-        console.log({data});
+        console.log({ data });
       } catch (error) {
         console.error("error:", error);
       } finally {
@@ -41,7 +41,9 @@ export default function Weapons() {
   return (
     <div className={styles.container}>
       {isLoading ? (
-        <p className={styles.loading}><i className="fa-solid fa-gear fa-spin"></i> Building...</p>
+        <p className={styles.loading}>
+          <i className="fa-solid fa-gear fa-spin"></i> Building...
+        </p>
       ) : (
         weaponTypes.map((type) => (
           <div key={type} className={styles.weaponType}>
@@ -58,7 +60,10 @@ export default function Weapons() {
                       />
                       <h3>{filteredWeapon.name}</h3>
                     </div>
-                    <p>Attack: {filteredWeapon.attack.display} ({filteredWeapon.attack.raw})</p>
+                    <p>
+                      Attack: {filteredWeapon.attack.display} (
+                      {filteredWeapon.attack.raw})
+                    </p>
                     {filteredWeapon.assets?.image && (
                       <div className={styles.weaponImageContainer}>
                         <img

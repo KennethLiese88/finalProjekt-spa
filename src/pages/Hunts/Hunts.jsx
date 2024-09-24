@@ -10,11 +10,12 @@ export default function Hunts() {
   );
 
   function count(id) {
-    setItems(prevItems => prevItems.map((monster) => monster.id === id
-          ? { ...monster, count: monster.count + 1 }
-          : monster)
+    setItems((prevItems) =>
+      prevItems.map((monster) =>
+        monster.id === id ? { ...monster, count: monster.count + 1 } : monster
+      )
     );
-  };
+  }
 
   return (
     <section className={styles.huntSection}>
@@ -45,7 +46,8 @@ export default function Hunts() {
                   </span>
                   <span
                     className={styles.spanHunted}
-                    onClick={() => count(monster.id)}>
+                    onClick={() => count(monster.id)}
+                  >
                     Hunted: {monster.count}
                   </span>
                 </li>

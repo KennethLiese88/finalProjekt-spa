@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./Comments.module.css";
 import CommentCard from "../../components/CommentCard/CommentCard";
-import { CommentContext} from "../../context/CommentContext";
-
+import { CommentContext } from "../../context/CommentContext";
 
 export default function Comments() {
   const { state, dispatch } = useContext(CommentContext);
@@ -70,7 +69,11 @@ export default function Comments() {
         </fieldset>
       </form>
       {state.comments.map((comment, index) => (
-        <CommentCard key={index} comment={comment} removeComment={() => handleRemoveComment(comment.id)}/>
+        <CommentCard
+          key={index}
+          comment={comment}
+          removeComment={() => handleRemoveComment(comment.id)}
+        />
       ))}
     </section>
   );

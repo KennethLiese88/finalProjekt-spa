@@ -1,0 +1,13 @@
+.notFound {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  background-color: rgb(237, 237, 237);
+  p {
+    position: absolute;
+    bottom: 100px;
+    right: 600px;
+  }
+}

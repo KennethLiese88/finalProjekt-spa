@@ -1,50 +1,60 @@
 .comment_section {
-    min-height: 100vh;
-    background-image: url("../../assets/images/bg-green-plant.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    scroll-behavior: smooth;
-    margin: 0;
-    padding-bottom: 2rem;
-    h2 {
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.527);
-        color: white;
-        padding-top: 2rem;
-    }
+  min-height: 100vh;
+  background-image: url("../../assets/images/bg-green-plant.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding-bottom: 2rem;
+  h2 {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.527);
+    color: white;
+    padding-top: 2rem;
+  }
 }
 
 form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.527);
+  padding-bottom: 1rem;
+  fieldset {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.527);
-    padding-bottom: 1rem;
-    fieldset {
-        display: flex;
-        flex-direction: column;
-        border: none;
-        margin: 0.5rem;
-        padding: 0.5rem;
-        label {
-            color: white;
-            margin: 0.5rem 0 0.3rem 0;
-        }
-        input, textarea, button {
-            border-radius: 4px;
-            padding: 0.5rem;
-        }
-        textarea {
-            height: 100%;
-        }
-        button {
-            color: white;
-            background-image: linear-gradient(to right, rgb(0, 128, 90) 0%, black 100%);
-            margin-top: 1rem;
-            &:hover {
-            background-image: linear-gradient(to right, rgb(20, 174, 128) 0%, rgb(46, 46, 46) 100%);
-            }
-        }
+    flex-direction: column;
+    border: none;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    label {
+      color: white;
+      margin: 0.5rem 0 0.3rem 0;
     }
+    input,
+    textarea,
+    button {
+      border-radius: 4px;
+      padding: 0.5rem;
+    }
+    textarea {
+      height: 100%;
+    }
+    button {
+      color: white;
+      background-image: linear-gradient(
+        to right,
+        rgb(0, 128, 90) 0%,
+        black 100%
+      );
+      margin-top: 1rem;
+      &:hover {
+        background-image: linear-gradient(
+          to right,
+          rgb(20, 174, 128) 0%,
+          rgb(46, 46, 46) 100%
+        );
+      }
+    }
+  }
 }

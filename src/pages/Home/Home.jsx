@@ -1,14 +1,14 @@
-import React from 'react';
-import styles from './Home.module.css';
+import React from "react";
+import styles from "./Home.module.css";
 
 export default function Home() {
   return (
     <div className={styles.homeContainer}>
-            <footer className={styles.footer}>
-                <p className={styles.footerText}>© 2024 Monster Hunter World Fanpage</p>
-            </footer>
-        </div>
-  )
+      <footer className={styles.footer}>
+        <p className={styles.footerText}>© 2024 Monster Hunter World Fanpage</p>
+      </footer>
+    </div>
+  );
 }
 
 // dropdown menü für den header wenn bildschirm zu klein wird

@@ -14,7 +14,7 @@ export default function Items() {
         const response = await fetch("https://mhw-db.com/items");
         const data = await response.json();
         setItems(data);
-        console.log({data});
+        console.log({ data });
       } catch (error) {
         console.error("error:", error);
       } finally {
@@ -52,7 +52,9 @@ export default function Items() {
         <button onClick={handleSearch}>Search</button>
       </div>
       {isLoading ? (
-        <p className={styles.isLoading}><i className="fa-solid fa-gear fa-spin"></i> Loading...</p>
+        <p className={styles.isLoading}>
+          <i className="fa-solid fa-gear fa-spin"></i> Loading...
+        </p>
       ) : (
         <div className={styles.itemsContainer}>
           {items.map((item, index) => (
@@ -66,7 +68,9 @@ export default function Items() {
           ))}
           <div className={styles.backTop}>
             <i className="fa-solid fa-stop"></i>
-            <a href="#top"><i className="fa-solid fa-angles-up"></i></a>
+            <a href="#top">
+              <i className="fa-solid fa-angles-up"></i>
+            </a>
             <i className="fa-solid fa-stop"></i>
           </div>
         </div>
