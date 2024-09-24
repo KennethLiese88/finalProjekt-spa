@@ -19,11 +19,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Header />}>
               <Route index element={<Home />} />
-              <Route path="/monster" element={<Monster />} />
-              <Route path="/weapons" element={<Weapons />} />
-              <Route path="/items" element={<Items />} />
-              <Route path="/hunts" element={<Hunts />} />
-              <Route path="/comments" element={<Comments />} />
+              <Route path="monster" element={<Monster />} />
+              <Route path="weapons" element={<Weapons />} />
+              <Route path="items" element={<Items />} />
+              <Route path="hunts" element={<Hunts />} />
+              <Route path="comments" element={<Comments />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
